@@ -1,1 +1,1 @@
-# Diplomna
+# Task executor app
