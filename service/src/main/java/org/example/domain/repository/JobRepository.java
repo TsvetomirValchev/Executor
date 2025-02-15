@@ -17,4 +17,5 @@ public interface JobRepository extends JpaRepository<Job, UUID> {
     @Transactional
     @Query(value = "UPDATE Job SET logs = array_cat(logs, cast(:logs as varchar[])) WHERE job_id = :job_id", nativeQuery = true)
     void appendLogs(@Param("job_id") UUID jobId, @Param("product_id") UUID productId, @Param("logs") String[] logs);
+
 }
